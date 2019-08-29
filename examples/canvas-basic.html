@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Leon Sans - Canvas Basic</title>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            cursor: move;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.js"></script>
+</head>
+
+<body>
+    <script src="../dist/leon.js"></script>
+    <script src="js/util.js"></script>
+    <script>
+        let leon, controll;
+
+        function init() {
+            generateCanvas();
+
+            controll = {
+                color: {},
+                align: {},
+                drawing: () => {
+                    let i, total = leon.drawing.length;
+                    for (i = 0; i < total; i++) {
+                        TweenMax.killTweensOf(leon.drawing[i]);
+                        TweenMax.fromTo(leon.drawing[i], 1.6, {
+                            value: 0
+                        }, {
+                            delay: i * 0.05,
+                            value: 1,
+                            ease: Power4.easeOut
+                        });
+                    }
+                }
+            };
+
+            leon = new LeonSans({
+                text: 'The quick brown\nfox jumps over\nthe lazy dog',
+                color: ['#342f2e'],
+                size: getSize(120),
+                weight: 300
+            });
+
+            const gui = new dat.GUI();
+            gui.add(leon, 'text');
+            gui.add(leon, 'size', 20, 1000);
+            gui.add(leon, 'weight', 1, 900);
+            gui.add(leon, 'tracking', -3, 10);
+            gui.add(leon, 'leading', -8, 10);
+            const alignControll = gui.add(controll, 'align', [ 'left', 'center', 'right'] );
+            gui.add(leon, 'maxWidth', 0, 2000);
+            gui.add(leon, 'breakWord');
+            gui.add(controll, 'drawing');
+            const colorControll = gui.add(controll, 'color', [ 'black', 'white', 'yellow', 'red - blue', 'mixed'] );
+
+            alignControll.onChange((value) => {
+                leon.align = value;
+            });
+            alignControll.setValue('left');
+
+            colorControll.onChange((value) => {
+                if (value == 'black') {
+                    document.body.style.backgroundColor = '#f0f0f0';
+                    leon.color = ['#342f2e'];
+                } else if (value == 'white') {
+                    document.body.style.backgroundColor = '#000000';
+                    leon.color = ['#ffffff'];
+                } else if (value == 'yellow') {
+                    document.body.style.backgroundColor = '#57c4e2';
+                    leon.color = ['#ffd93c'];
+                } else if (value == 'red - blue') {
+                    document.body.style.backgroundColor = '#ffffff';
+                    leon.color = [['#ff94a7', '#1c7dd1']];
+                } else if (value == 'mixed') {
+                    document.body.style.backgroundColor = '#ffffff';
+                    leon.color = ['#ff5892', '#7bc92f', ['#3eda4e', '#f4bf14', '#fa314c', '#074aee'], '#ffd93c', '#c0008b'];
+                }
+            });
+            colorControll.setValue('black');
+            
+            requestAnimationFrame(animate);
+        }
+
+        function animate(t) {
+            requestAnimationFrame(animate);
+
+            ctx.clearRect(0, 0, sw, sh);
+
+            const x = (sw - leon.rect.w) / 2;
+            const y = (sh - leon.rect.h) / 2;
+            leon.position(x + moveX, y + moveY);
+
+            leon.draw(ctx);
+        }
+
+        window.onload = () => {
+            init();
+        };
+    </script>
+</body>
+
+</html>

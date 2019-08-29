@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>LeonSans - Color Pattern</title>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            cursor: move;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.js"></script>
+</head>
+
+<body>
+    <script src="../dist/leon.js"></script>
+    <script src="js/util.js"></script>
+    <script>
+        const speed = 10;
+        const fps = 1000 / 30;
+        const PI2 = 2 * Math.PI;
+        let cValue = 0, mode;
+        let leon, controll, time;
+
+        function init() {
+            generateCanvas();
+            
+            controll = {
+                size: 200,
+                pathGap: 0,
+                patternWidth: 2,
+                visual: {},
+                drawing: () => {
+                    let i, total = leon.drawing.length;
+                    for (i = 0; i < total; i++) {
+                        TweenMax.killTweensOf(leon.drawing[i]);
+                        TweenMax.fromTo(leon.drawing[i], 2, {
+                            value: 0
+                        }, {
+                            delay: i * 0.1,
+                            value: 1,
+                            ease: Power4.easeOut
+                        });
+                    }
+                }
+            };
+
+            leon = new LeonSans({
+                text: 'abcdefg',
+                size: getSize(200),
+                weight: 500,
+                pathGap: -1,
+                isPath: true
+            });
+
+            const gui = new dat.GUI();
+            gui.add(leon, 'text');
+            gui.add(leon, 'size', 10, 1000);
+            const weightControll = gui.add(controll, 'patternWidth', 1, 100);
+            gui.add(controll, 'drawing');
+            const visControll = gui.add(controll, 'pathGap', [ '-1', '0'] );
+
+            visControll.onChange((value) => {
+                mode = value;
+                if (mode == '-1') {
+                    weightControll.setValue(40);
+                    leon.pathGap = -1;
+                    leon.tracking = 1;
+                } else if (mode == '0') {
+                    weightControll.setValue(40);
+                    leon.pathGap = 0;
+                    leon.tracking = 1;
+                }
+            });
+            visControll.setValue('-1');
+
+            requestAnimationFrame(animate);
+        }
+
+        function update() {
+            ctx.clearRect(0, 0, sw, sh);
+            ctx.lineWidth = 0.2;
+            const w = controll.patternWidth * leon.scale;
+            const total = leon.data.length;
+            let i, p, pos, no = 0; 
+            let d, j, j_total;
+
+            for (i = 0; i < total; i++) {
+                d = leon.data[i].paths;
+                j_total = Math.round(d.length * leon.drawing[i].value);
+                for (j = 0; j < j_total; j++) {
+                    pos = d[j];
+                    ctx.fillStyle = randomColor(no);
+                    ctx.strokeStyle = randomColor(no);
+                    ctx.beginPath();
+                    ctx.arc(pos.x, pos.y, w, 0, PI2);
+                    ctx.stroke();
+                    no += 1;
+                }
+            }
+
+            cValue -= speed;
+        }
+
+        function randomColor(no) {
+            return "hsl(" + (no + cValue) + ',' + '70%,' + '50%)';
+        }
+
+        function animate(t) {
+            requestAnimationFrame(animate);
+
+            const x = (sw - leon.rect.w) / 2;
+            const y = (sh - leon.rect.h) / 2;
+            leon.position(x + moveX, y + moveY);
+
+            if (t) {
+                if (!time) time = t;
+                if (t - time > fps) {
+                    time = t;
+                    update();
+                }
+            }
+        }
+
+        window.onload = () => {
+            init();
+        };
+    </script>
+</body>
+
+</html>
