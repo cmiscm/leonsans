@@ -15,6 +15,8 @@ The font is made with code, it has coordinate values of the drawing points for e
 - [Metaball](https://leon-kim.com/examples/#metaball-pixi)
 - [Gradient](https://leon-kim.com/examples/#gradient)
 - [Plant](https://leon-kim.com/examples/#plants-pixi)
+- [Colorful](https://leon-kim.com/examples/#colorful)
+- [Color pattern](https://leon-kim.com/examples/#color-pattern)
 
 
 ## Usage
