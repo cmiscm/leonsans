@@ -5,6 +5,12 @@ There are live examples at https://leon-kim.com/examples/
 
 And website at https://leon-kim.com/
 
+![uppercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/uppercase.gif)
+
+![lowercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/lowercase.gif)
+
+![number](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/number.gif)
+
 
 ## What is special?
 The font is made with code, it has coordinate values of the drawing points for each type. With the coordinate values, you can create custom shapes, effects or animations.
