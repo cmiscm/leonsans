@@ -5,17 +5,35 @@ There are live examples at https://leon-kim.com/examples/
 
 And website at https://leon-kim.com/
 
+![uppercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/uppercase.gif)
+
+![lowercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/lowercase.gif)
+
+![number](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/number.gif)
+
 
 ## What is special?
 The font is made with code, it has coordinate values of the drawing points for each type. With the coordinate values, you can create custom shapes, effects or animations.
 
+![Drawing animation](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/drawing.gif)
 - [Drawing animation](https://leon-kim.com/examples/#canvas-basic)
+
+![Weight change](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/weight.gif)
 - [Weight change](https://leon-kim.com/examples/#canvas-basic)
+
+![Wave](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/wave.gif)
 - [Wave](https://leon-kim.com/examples/#wave)
+
+![Metaball](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/metaball.gif)
 - [Metaball](https://leon-kim.com/examples/#metaball-pixi)
-- [Gradient](https://leon-kim.com/examples/#gradient)
+
+![Plant](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/plant.gif)
 - [Plant](https://leon-kim.com/examples/#plants-pixi)
+
+![Colorful](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/colorful.gif)
 - [Colorful](https://leon-kim.com/examples/#colorful)
+
+![Color pattern](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/colorpattern.gif)
 - [Color pattern](https://leon-kim.com/examples/#color-pattern)
 
 
