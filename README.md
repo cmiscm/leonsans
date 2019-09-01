@@ -46,7 +46,7 @@ Download the minified js file in dist folder and include it in your html.
 Generate LeonSans and draw it in the Canvas element of HTML5.
 ```javascript
 
-let leon, controll, canvas, ctx;
+let leon, canvas, ctx;
 
 const sw = 800;
 const sh = 600;
@@ -70,7 +70,6 @@ function init() {
         weight: 200
     });
 
-    
     requestAnimationFrame(animate);
 }
 
