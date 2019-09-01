@@ -95,7 +95,7 @@ For the drawing animation, include TweenMax (JS animation library) in your html.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 ```
 
-And update all the drawing valuse from 0 to 1
+And update all the drawing values from 0 to 1
 ```javascript
 let i, total = leon.drawing.length;
 for (i = 0; i < total; i++) {
