@@ -46,32 +46,71 @@ Download the minified js file in dist folder and include it in your html.
 Generate LeonSans and draw it in the Canvas element of HTML5.
 ```javascript
 
-this.canvas = document.createElement('canvas');
-document.body.appendChild(this.canvas);
-this.ctx = this.canvas.getContext("2d");
+let leon, controll, canvas, ctx;
 
-this.leon = new LeonSans({
-    text: 'The quick brown\nfox jumps over\nthe lazy dog',
-    color: ['#000000'],
-    size: 160,
-    weight: 200
-});
+const sw = 800;
+const sh = 600;
+const pixelRatio = 2;
 
-requestAnimationFrame(animate);
+function init() {
+    canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    ctx = canvas.getContext("2d");
 
+    canvas.width = sw * pixelRatio;
+    canvas.height = sh * pixelRatio;
+    canvas.style.width = sw + 'px';
+    canvas.style.height = sh + 'px';
+    ctx.scale(pixelRatio, pixelRatio);
+
+    leon = new LeonSans({
+        text: 'The quick brown\nfox jumps over\nthe lazy dog',
+        color: ['#000000'],
+        size: 80,
+        weight: 200
+    });
+
+    
+    requestAnimationFrame(animate);
+}
 
 function animate(t) {
     requestAnimationFrame(animate);
 
-    this.ctx.clearRect(0, 0, document.body.clientWidth, document.body.clientHeight);
+    ctx.clearRect(0, 0, sw, sh);
 
-    const x = (document.body.clientWidth - this.leon.rect.w) / 2;
-    const y = (document.body.clientHeight - this.leon.rect.h) / 2;
-    this.leon.position(x, y);
+    const x = (sw - leon.rect.w) / 2;
+    const y = (sh - leon.rect.h) / 2;
+    leon.position(x, y);
 
-    this.leon.draw(this.ctx);
+    leon.draw(ctx);
+}
+
+window.onload = () => {
+    init();
+};
+```
+
+For the drawing animation, include TweenMax (JS animation library) in your html.
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+```
+
+And update all the drawing valuse from 0 to 1
+```javascript
+let i, total = leon.drawing.length;
+for (i = 0; i < total; i++) {
+    TweenMax.fromTo(leon.drawing[i], 1.6, {
+        value: 0
+    }, {
+        delay: i * 0.05,
+        value: 1,
+        ease: Power4.easeOut
+    });
 }
 ```
+
+
 
 ### Option list
 
