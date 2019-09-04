@@ -13,7 +13,7 @@ And website at https://leon-kim.com/
 
 
 ## What is special?
-The font is made with code, it has coordinate values of the drawing points for each type. With the coordinate values, you can create custom shapes, effects or animations.
+The font is made with code, it has coordinate values of the drawing points for each glyph. With the coordinate values, you can create custom shapes, effects or animations.
 
 ![Drawing animation](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/drawing.gif)
 - [Drawing animation](https://leon-kim.com/examples/#canvas-basic)
