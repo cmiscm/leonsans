@@ -3,7 +3,6 @@ import {
     ROTATE_HORIZONTAL,
     ROTATE_VERTICAL,
     ROTATE_NONE,
-    VERTEX_GAP,
     getR,
     getCurveR,
     VERTEX_GAP2
@@ -298,10 +297,10 @@ export const SPECIAL = {
             d: -1,
             v: [
                 ['m', 0, 150, {
-                    r: getR(0, 150, 88 - VERTEX_GAP, 0)
+                    r: getR(0, 150, 88 - VERTEX_GAP2, 0)
                 }],
-                ['l', 88 - VERTEX_GAP, 0, {
-                    r: getR(0, 150, 88 - VERTEX_GAP, 0),
+                ['l', 88 - VERTEX_GAP2, 0, {
+                    r: getR(0, 150, 88 - VERTEX_GAP2, 0),
                     f: 1
                 }],
                 ['l', 88 + VERTEX_GAP2, 0, {
