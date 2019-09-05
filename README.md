@@ -11,7 +11,7 @@ And website at https://leon-kim.com/
 
 ![number](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/number.gif)
 
-![latin](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/latin.gif)
+![latin](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/latin2.gif)
 
 
 ## What is special?
