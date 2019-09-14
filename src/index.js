@@ -1,2 +1,2 @@
-const LeonSans = require('./LeonSans').default;
+const LeonSans = require('./leonsans').default;
 module.exports = LeonSans;

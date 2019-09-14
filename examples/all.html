@@ -54,12 +54,12 @@
             };        
 
             leon = new LeonSans({
-                text: 'abcdefghijklmn\nopqrstuvwxyz\nABCDEFGHIJK\nLMNOPQRST\nUVWXYZ\n0123456789\n?!$^&*(){}[]<>~\n:;,.\'"+=-_@#%',
+                text: 'abcdefghijklmn\nopqrstuvwxyz\nABCDEFGHIJK\nLMNOPQRST\nUVWXYZ\n0123456789\n?!$^&*@#%:;\n(){}[]<>«»~_\n\'"·+=-×÷¿¡,.\nÀÁÂÃÄÅĂĄÆ\nÞßĆĈĊČÇĤÝ\nĎĐÈÉÊËĒĔĖĚ\nĜĞĠĢÙÚÛÜŬ\nŜŞĴÑÌÍÎÏ\nàáâãåäăąæ\nþćĉċčçĥýÿ\nďđèéêëēĕėě\nĝğġģùúûüŭ\nŝşĵñìíîï',
                 color: ['#342f2e'],
                 size: getSize(90),
                 weight: 200,
                 tracking: 2,
-                leading: 1, 
+                leading: 2, 
                 align: 'center'
             });
 
@@ -83,7 +83,8 @@
             ctx.clearRect(0, 0, sw, sh);
 
             const x = (sw - leon.rect.w) / 2;
-            const y = (sh - leon.rect.h) / 2;
+            let y = (sh - leon.rect.h) / 2;
+            if (y < 0) y = 0;
             leon.position(x + moveX, y + moveY);
 
             ctx.save();

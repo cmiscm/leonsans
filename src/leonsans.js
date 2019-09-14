@@ -1,3 +1,10 @@
+/*!
+ * VERSION: 1.6.3
+ * DATE: 2019-09-13
+ * https://leon-sans.com
+ *
+ * @license Copyright (c) 2019, Jongmin Kim. All rights reserved.
+ **/
 import {
     Dispatcher
 } from './core/dispatcher.js';
