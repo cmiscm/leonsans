@@ -5,13 +5,15 @@ There are live examples at https://leon-kim.com/examples/
 
 And website at https://leon-kim.com/
 
-![uppercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/uppercase.gif)
+![uppercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/upper.gif)
 
-![lowercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/lowercase.gif)
+![lowercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/lower.gif)
 
-![number](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/number.gif)
+![number](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/number-special.gif)
 
-![latin](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/latin2.gif)
+![latin upper](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/latin-upper.gif)
+
+![latin lower](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/latin-lower.gif)
 
 
 ## What is special?
