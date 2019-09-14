@@ -11,6 +11,8 @@ And website at https://leon-kim.com/
 
 ![number](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/number.gif)
 
+![latin](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/latin2.gif)
+
 
 ## What is special?
 The font is made with code, it has coordinate values of the drawing points for each glyph. With the coordinate values, you can create custom shapes, effects or animations.
