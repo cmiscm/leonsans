@@ -167,5 +167,5 @@ for (i = 0; i < total; i++) {
 | `point(ctx)`                | Draw circles at each drawing point and lines for each type. |
 | `box(ctx)`                | Draw outline box for the text. |
 | `reset()`                  | Reset all the values.  |
-| `destroy()`                  | Destroy.  |
+| `dispose()`                  | Dispose.  |
 
