@@ -20,7 +20,8 @@ import {
 const DATA = Object.assign({}, UPPER, LOWER, NUMBER, SPECIAL, LATIN);
 
 export function typo(v) {
-    var t = DATA[v] || DATA[TOFU];
-    t.v = v;
-    return t;
+    const t = DATA[v] || DATA[TOFU];
+    const clone = t.clone();
+    clone.v = v;
+    return clone;
 }

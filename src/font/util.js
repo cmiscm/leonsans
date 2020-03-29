@@ -37,7 +37,32 @@ export function generateFontData(w, fw, fh, x1, x2, y1, y2, path) {
             y1: y1,
             y2: y2,
         },
-        p: arr
+        p: arr,
+        clone: () => {
+            const arr2 = [];
+            for (let i = 0; i < arr.length; i++) {
+                arr2[i] = {
+                    d: arr[i].d,
+                    v: arr[i].v
+                };
+            }
+            const v = {
+                rect: {
+                    w: w,
+                    h: FONT_HEIGHT,
+                    fw: fw,
+                    fh: fh
+                },
+                ratio: {
+                    x1: x1,
+                    x2: x2,
+                    y1: y1,
+                    y2: y2,
+                },
+                p: arr2,
+            };
+            return v;
+        }
     };
 }
 
