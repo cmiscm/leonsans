@@ -5,7 +5,7 @@ There are live examples at https://leon-kim.com/examples/
 
 And website at https://leon-kim.com/
 
-[![Video Label](http://img.youtube.com/vi/sb7v-d-R11E/0.jpg)](https://youtu.be/sb7v-d-R11E?hl=en&fs=1&cc_load_policy=1)
+[![Video Label](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/leon-youtube.jpg)](https://youtu.be/sb7v-d-R11E?hl=en&fs=1&cc_load_policy=1)
 
 ![uppercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/upper.gif)
 
