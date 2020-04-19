@@ -5,7 +5,7 @@ There are live examples at https://leon-kim.com/examples/
 
 And website at https://leon-kim.com/
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sb7v-d-R11E&hl=en&fs=1&cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Label](http://img.youtube.com/vi/sb7v-d-R11E/0.jpg)](https://youtu.be/sb7v-d-R11E?hl=en&fs=1&cc_load_policy=1)
 
 ![uppercase](https://raw.githubusercontent.com/cmiscm/leonsans/gh-pages/screenshot/upper.gif)
 
