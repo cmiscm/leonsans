@@ -18,9 +18,10 @@ export function Lines(ctx, data) {
             ctx.moveTo(pos.x, pos.y);
         } else if (pos.type == 'l') {
             ctx.lineTo(pos.x, pos.y);
+            d.stroke(ctx, d);
         } else if (pos.type == 'b') {
             ctx.bezierCurveTo(pos.x, pos.y, pos.x2, pos.y2, pos.x3, pos.y3);
+            d.stroke(ctx, d);
         }
-        d.stroke(ctx, d);
     }
 }
